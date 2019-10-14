@@ -5,16 +5,15 @@
 
 package main;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 class Solution {
 	class H2O {
 		volatile int hnum = 0;
 		volatile int onum = 0;
+		Object obj = null;
 		
-	    public H2O() {}
+	    public H2O() {
+	        obj = new Object();
+	    }
 
 	    public void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
 	    	while(hnum/2 > onum) {
